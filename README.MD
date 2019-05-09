@@ -3,7 +3,7 @@
 Данная лабораторная работа посвещена изучению систем контроля версий на примере **Git**.
 
 ```bash
-$ open https://git-scm.com
+$ open https://git-scm.com  //открыть данный сайт
 ```
 
 ## Tasks
@@ -17,42 +17,42 @@ $ open https://git-scm.com
 ## Tutorial
 
 ```ShellSession
-$ export GITHUB_USERNAME=<имя_пользователя>
+$ export GITHUB_USERNAME=<имя_пользователя>  // передать переменным, находящимся с левой стороны равно, значения правой
 $ export GITHUB_EMAIL=<адрес_почтового_ящика>
 $ export GITHUB_TOKEN=<сгенирированный_токен>
-$ alias edit=<nano|vi|vim|subl>
+$ alias edit=<nano|vi|vim|subl> // Придаем еще одному выражению св-во правого
 ```
 
 ```ShellSession
-$ cd ${GITHUB_USERNAME}/workspace
-$ source scripts/activate
+$ cd ${GITHUB_USERNAME}/workspace // переходим в данную директорию
+$ source scripts/activate 
 ```
 
 ```ShellSession
-$ mkdir ~/.config
-$ cat > ~/.config/hub <<EOF
+$ mkdir ~/.config //создется директория
+$ cat > ~/.config/hub <<EOF // и  файл открывается
 github.com:
 - user: ${GITHUB_USERNAME}
   oauth_token: ${GITHUB_TOKEN}
   protocol: https
-EOF
-$ git config --global hub.protocol https
+EOF //запись выражения вше в файл
+$ git config --global hub.protocol https 
 ```
 
 ```ShellSession
-$ mkdir projects/lab02 && cd projects/lab02
-$ git init
+$ mkdir projects/lab02 && cd projects/lab02 // оздается лиректория
+$ git init //инициализация
 $ git config --global user.name ${GITHUB_USERNAME}
 $ git config --global user.email ${GITHUB_EMAIL}
-# check your git global settings
+# check your git global settings 
 $ git config -e --global
-$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab02.git
-$ git pull origin master
-$ touch README.md
-$ git status
-$ git add README.md
-$ git commit -m"added README.md"
-$ git push origin master
+$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab02.git //скачивание файлов
+$ git pull origin master //отправить с соединением
+$ touch README.md //открыть
+$ git status //текущий статус
+$ git add README.md // добавить файл
+$ git commit -m"added README.md" //закомитить
+$ git push origin master //отправить на сайт
 ```
 
 Добавить на сервисе **GitHub** в репозитории **lab02** файл **.gitignore**
